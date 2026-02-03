@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import heroAbstract from "@/assets/hero-abstract.jpg";
+import workspaceImage from "@/assets/workspace.jpg";
 
 // Trust logos (company names as text for now)
 const trustLogos = [
@@ -79,27 +81,36 @@ export default function Home() {
       {/* Hero Section */}
       <section className="section">
         <div className="container-wide">
-          <div className="max-w-4xl">
-            <h1 className="text-balance animate-fade-in">
-              We engineer for{" "}
-              <span className="text-highlight">speed</span>,
-              <br />
-              and build{" "}
-              <span className="text-highlight">software</span> to last
-            </h1>
-            <p className="mt-6 text-body-lg text-body max-w-2xl animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              From SMEs to fast-growing startups, teams trust us to deliver speed and quality when both are non-negotiable. Built right, software scales with your business.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <Button asChild size="lg" variant="hero">
-                <Link to="/contact">Book a call</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link to="/services">
-                  See our capabilities
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-xl">
+              <h1 className="text-balance animate-fade-in">
+                We engineer for{" "}
+                <span className="text-highlight">speed</span>,
+                <br />
+                and build{" "}
+                <span className="text-highlight">software</span> to last
+              </h1>
+              <p className="mt-6 text-body-lg text-body max-w-2xl animate-fade-in" style={{ animationDelay: "0.1s" }}>
+                From SMEs to fast-growing startups, teams trust us to deliver speed and quality when both are non-negotiable. Built right, software scales with your business.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+                <Button asChild size="lg" variant="hero">
+                  <Link to="/contact">Book a call</Link>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <Link to="/services">
+                    See our capabilities
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+            <div className="hidden lg:block animate-fade-in" style={{ animationDelay: "0.3s" }}>
+              <img 
+                src={heroAbstract} 
+                alt="Abstract geometric shapes representing precision engineering" 
+                className="w-full h-auto rounded-2xl shadow-lg"
+              />
             </div>
           </div>
         </div>
@@ -162,16 +173,25 @@ export default function Home() {
       {/* Why Our Software Lasts */}
       <section className="section">
         <div className="container-wide">
-          <div className="max-w-3xl">
-            <h2 className="mb-12">Built right. Scales forever.</h2>
-            <ul className="space-y-4">
-              {principles.map((principle, index) => (
-                <li key={index} className="flex items-start gap-4">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 flex-shrink-0" />
-                  <span className="text-lg text-body">{principle}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="mb-12">Built right. Scales forever.</h2>
+              <ul className="space-y-4">
+                {principles.map((principle, index) => (
+                  <li key={index} className="flex items-start gap-4">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 flex-shrink-0" />
+                    <span className="text-lg text-body">{principle}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="hidden lg:block">
+              <img 
+                src={workspaceImage} 
+                alt="Modern development workspace with clean code" 
+                className="w-full h-auto rounded-2xl shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </section>

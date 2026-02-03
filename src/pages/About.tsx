@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import teamCollab from "@/assets/team-collab.jpg";
 
 const beliefs = [
   "Strong foundations beat quick hacks",
@@ -34,11 +35,20 @@ export default function About() {
       {/* Hero */}
       <section className="section">
         <div className="container-wide">
-          <div className="max-w-3xl">
-            <h1 className="mb-6">
-              Built by engineers who care about doing things{" "}
-              <span className="text-highlight">right</span>
-            </h1>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-xl">
+              <h1 className="mb-6">
+                Built by engineers who care about doing things{" "}
+                <span className="text-highlight">right</span>
+              </h1>
+            </div>
+            <div className="hidden lg:block">
+              <img 
+                src={teamCollab} 
+                alt="Team collaborating in a modern office" 
+                className="w-full h-auto rounded-2xl shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </section>

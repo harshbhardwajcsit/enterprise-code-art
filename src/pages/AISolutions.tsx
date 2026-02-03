@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import aiAbstract from "@/assets/ai-abstract.jpg";
 
 const aiUseCases = [
   {
@@ -31,13 +32,22 @@ export default function AISolutions() {
       {/* Hero */}
       <section className="section">
         <div className="container-wide">
-          <div className="max-w-3xl">
-            <h1 className="mb-6">
-              AI that makes <span className="text-highlight">business sense</span>
-            </h1>
-            <p className="text-body-lg text-body">
-              We don't add AI for the sake of it. We use it where it creates measurable value.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-xl">
+              <h1 className="mb-6">
+                AI that makes <span className="text-highlight">business sense</span>
+              </h1>
+              <p className="text-body-lg text-body">
+                We don't add AI for the sake of it. We use it where it creates measurable value.
+              </p>
+            </div>
+            <div className="hidden lg:block">
+              <img 
+                src={aiAbstract} 
+                alt="Abstract flowing lines representing AI and data" 
+                className="w-full h-auto rounded-2xl shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </section>
