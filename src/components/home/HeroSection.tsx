@@ -9,7 +9,7 @@ import heroAbstract from "@/assets/hero-abstract.jpg";
 export function HeroSection() {
   return (
     <section className="section relative">
-      <FloatingElements variant="dense" />
+      <FloatingElements variant="hero" />
       <div className="container-wide">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-xl">

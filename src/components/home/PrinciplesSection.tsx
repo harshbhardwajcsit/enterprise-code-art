@@ -15,7 +15,7 @@ const principles = [
 export function PrinciplesSection() {
   return (
     <section className="section relative">
-      <FloatingElements variant="default" />
+      <FloatingElements variant="section" />
       <div className="container-wide relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>

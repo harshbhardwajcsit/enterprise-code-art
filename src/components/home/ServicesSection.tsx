@@ -32,7 +32,7 @@ const services = [
 export function ServicesSection() {
   return (
     <section className="section bg-secondary/30 relative">
-      <FloatingElements variant="minimal" />
+      <FloatingElements variant="section" />
       <div className="container-wide relative z-10">
         <FadeIn>
           <h2 className="mb-16">What we build</h2>
