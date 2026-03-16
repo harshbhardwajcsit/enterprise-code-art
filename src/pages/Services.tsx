@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/animations/FadeIn";
+import { FloatingElements } from "@/components/animations/FloatingElements";
 import { Building2, Globe, Zap, Brain, Code2 } from "lucide-react";
 
 const services = [
