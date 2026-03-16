@@ -7,7 +7,7 @@ import { FloatingElements } from "@/components/animations/FloatingElements";
 export function CTASection() {
   return (
     <section className="section relative">
-      <FloatingElements variant="minimal" />
+      <FloatingElements variant="cta" />
       <div className="container-wide text-center relative z-10">
         <FadeIn>
           <div className="max-w-2xl mx-auto">
