@@ -27,10 +27,13 @@ const services = [
   },
 ];
 
+import { FloatingElements } from "@/components/animations/FloatingElements";
+
 export function ServicesSection() {
   return (
-    <section className="section bg-secondary/30">
-      <div className="container-wide">
+    <section className="section bg-secondary/30 relative">
+      <FloatingElements variant="minimal" />
+      <div className="container-wide relative z-10">
         <FadeIn>
           <h2 className="mb-16">What we build</h2>
         </FadeIn>
