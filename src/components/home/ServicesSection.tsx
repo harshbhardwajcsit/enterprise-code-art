@@ -3,6 +3,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { FloatingElements } from "@/components/animations/FloatingElements";
 
 const services = [
   {
