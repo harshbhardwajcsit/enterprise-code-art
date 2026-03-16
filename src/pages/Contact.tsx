@@ -14,8 +14,9 @@ export default function Contact() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section">
-        <div className="container-wide">
+      <section className="section relative">
+        <FloatingElements variant="hero" />
+        <div className="container-wide relative z-10">
           <div className="max-w-3xl">
             <h1 className="mb-6">Let's talk</h1>
           </div>
