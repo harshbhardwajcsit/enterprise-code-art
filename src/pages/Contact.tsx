@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { FloatingElements } from "@/components/animations/FloatingElements";
 
 const reasons = [
   "Launching a new product",
