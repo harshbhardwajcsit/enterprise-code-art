@@ -122,8 +122,9 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="section bg-secondary/30">
-        <div className="container-wide">
+      <section className="section bg-secondary/30 relative">
+        <FloatingElements variant="section" />
+        <div className="container-wide relative z-10">
           <FadeIn>
             <h2 className="mb-16 text-center">Our values</h2>
           </FadeIn>
