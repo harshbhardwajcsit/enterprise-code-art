@@ -28,7 +28,6 @@ const services = [
   },
 ];
 
-import { FloatingElements } from "@/components/animations/FloatingElements";
 
 export function ServicesSection() {
   return (
