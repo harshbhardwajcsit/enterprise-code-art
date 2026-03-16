@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { AnimatedImage } from "@/components/animations/AnimatedImage";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
+import { FloatingElements } from "@/components/animations/FloatingElements";
 import aiAbstract from "@/assets/ai-abstract.jpg";
 import { TrendingUp, BarChart3, Workflow, Sparkles } from "lucide-react";
 
