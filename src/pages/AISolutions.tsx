@@ -40,8 +40,9 @@ export default function AISolutions() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section">
-        <div className="container-wide">
+      <section className="section relative">
+        <FloatingElements variant="hero" />
+        <div className="container-wide relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div 
               className="max-w-xl"
