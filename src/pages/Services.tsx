@@ -143,8 +143,8 @@ export default function Services() {
       </section>
 
       {/* CTA */}
-      <section className="section bg-secondary/30">
-        <FadeIn>
+      <section className="section bg-secondary/30 relative">
+        <FloatingElements variant="cta" />
           <div className="container-wide text-center">
             <div className="max-w-2xl mx-auto">
               <h2 className="mb-6">Have a complex problem?</h2>

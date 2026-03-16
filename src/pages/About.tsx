@@ -146,8 +146,8 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="section">
-        <FadeIn>
+      <section className="section relative">
+        <FloatingElements variant="cta" />
           <div className="container-wide text-center">
             <div className="max-w-2xl mx-auto">
               <h2 className="mb-6">

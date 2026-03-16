@@ -99,8 +99,9 @@ export default function Contact() {
       </section>
 
       {/* Final Note */}
-      <section className="section-sm bg-secondary/30">
-        <div className="container-wide text-center">
+      <section className="section-sm bg-secondary/30 relative">
+        <FloatingElements variant="section" />
+        <div className="container-wide text-center relative z-10">
           <p className="text-body-lg text-body max-w-2xl mx-auto">
             Not ready for a call? No problem. Drop us an email with some context about your project and we'll get back to you with our thoughts.
           </p>
