@@ -133,8 +133,9 @@ export default function AISolutions() {
       </section>
 
       {/* AI Philosophy */}
-      <section className="section bg-secondary/30 overflow-hidden">
-        <div className="container-wide">
+      <section className="section bg-secondary/30 overflow-hidden relative">
+        <FloatingElements variant="section" />
+        <div className="container-wide relative z-10">
           <FadeIn>
             <div className="max-w-3xl mx-auto text-center">
               <motion.div
