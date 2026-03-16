@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { AnimatedImage } from "@/components/animations/AnimatedImage";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
+import { FloatingElements } from "@/components/animations/FloatingElements";
 import teamCollab from "@/assets/team-collab.jpg";
 
 const beliefs = [
@@ -37,8 +38,9 @@ export default function About() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section">
-        <div className="container-wide">
+      <section className="section relative">
+        <FloatingElements variant="hero" />
+        <div className="container-wide relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div 
               className="max-w-xl"
@@ -120,8 +122,9 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="section bg-secondary/30">
-        <div className="container-wide">
+      <section className="section bg-secondary/30 relative">
+        <FloatingElements variant="section" />
+        <div className="container-wide relative z-10">
           <FadeIn>
             <h2 className="mb-16 text-center">Our values</h2>
           </FadeIn>
@@ -143,9 +146,10 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="section">
+      <section className="section relative">
+        <FloatingElements variant="cta" />
         <FadeIn>
-          <div className="container-wide text-center">
+          <div className="container-wide text-center relative z-10">
             <div className="max-w-2xl mx-auto">
               <h2 className="mb-6">
                 If this sounds like your mindset,<br />

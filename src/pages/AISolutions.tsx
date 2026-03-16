@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { AnimatedImage } from "@/components/animations/AnimatedImage";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
+import { FloatingElements } from "@/components/animations/FloatingElements";
 import aiAbstract from "@/assets/ai-abstract.jpg";
 import { TrendingUp, BarChart3, Workflow, Sparkles } from "lucide-react";
 
@@ -39,8 +40,9 @@ export default function AISolutions() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section">
-        <div className="container-wide">
+      <section className="section relative">
+        <FloatingElements variant="hero" />
+        <div className="container-wide relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div 
               className="max-w-xl"
@@ -131,8 +133,9 @@ export default function AISolutions() {
       </section>
 
       {/* AI Philosophy */}
-      <section className="section bg-secondary/30 overflow-hidden">
-        <div className="container-wide">
+      <section className="section bg-secondary/30 overflow-hidden relative">
+        <FloatingElements variant="section" />
+        <div className="container-wide relative z-10">
           <FadeIn>
             <div className="max-w-3xl mx-auto text-center">
               <motion.div
@@ -152,9 +155,10 @@ export default function AISolutions() {
       </section>
 
       {/* CTA */}
-      <section className="section">
+      <section className="section relative">
+        <FloatingElements variant="cta" />
         <FadeIn>
-          <div className="container-wide text-center">
+          <div className="container-wide text-center relative z-10">
             <div className="max-w-2xl mx-auto">
               <h2 className="mb-6">Thinking about AI for your business?</h2>
               <p className="text-body-lg text-body mb-10">

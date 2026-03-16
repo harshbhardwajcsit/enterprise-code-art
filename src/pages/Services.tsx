@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/animations/FadeIn";
+import { FloatingElements } from "@/components/animations/FloatingElements";
 import { Building2, Globe, Zap, Brain, Code2 } from "lucide-react";
 
 const services = [
@@ -47,8 +48,9 @@ export default function Services() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section">
-        <div className="container-wide">
+      <section className="section relative">
+        <FloatingElements variant="hero" />
+        <div className="container-wide relative z-10">
           <motion.div 
             className="max-w-3xl"
             initial={{ opacity: 0, y: 30 }}
@@ -141,9 +143,10 @@ export default function Services() {
       </section>
 
       {/* CTA */}
-      <section className="section bg-secondary/30">
+      <section className="section bg-secondary/30 relative">
+        <FloatingElements variant="cta" />
         <FadeIn>
-          <div className="container-wide text-center">
+          <div className="container-wide text-center relative z-10">
             <div className="max-w-2xl mx-auto">
               <h2 className="mb-6">Have a complex problem?</h2>
               <p className="text-body-lg text-body mb-10">
