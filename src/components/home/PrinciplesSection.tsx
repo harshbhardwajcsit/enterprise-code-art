@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { AnimatedImage } from "@/components/animations/AnimatedImage";
+import { FloatingElements } from "@/components/animations/FloatingElements";
 import workspaceImage from "@/assets/workspace.jpg";
 
 const principles = [
@@ -13,8 +14,9 @@ const principles = [
 
 export function PrinciplesSection() {
   return (
-    <section className="section">
-      <div className="container-wide">
+    <section className="section relative">
+      <FloatingElements variant="default" />
+      <div className="container-wide relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <FadeIn>

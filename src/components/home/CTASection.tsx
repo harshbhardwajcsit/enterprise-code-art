@@ -2,11 +2,13 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/animations/FadeIn";
+import { FloatingElements } from "@/components/animations/FloatingElements";
 
 export function CTASection() {
   return (
-    <section className="section">
-      <div className="container-wide text-center">
+    <section className="section relative">
+      <FloatingElements variant="minimal" />
+      <div className="container-wide text-center relative z-10">
         <FadeIn>
           <div className="max-w-2xl mx-auto">
             <h2 className="mb-6">Let's build something that actually works</h2>

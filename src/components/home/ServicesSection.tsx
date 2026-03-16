@@ -3,6 +3,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { FloatingElements } from "@/components/animations/FloatingElements";
 
 const services = [
   {
@@ -27,10 +28,12 @@ const services = [
   },
 ];
 
+
 export function ServicesSection() {
   return (
-    <section className="section bg-secondary/30">
-      <div className="container-wide">
+    <section className="section bg-secondary/30 relative">
+      <FloatingElements variant="minimal" />
+      <div className="container-wide relative z-10">
         <FadeIn>
           <h2 className="mb-16">What we build</h2>
         </FadeIn>

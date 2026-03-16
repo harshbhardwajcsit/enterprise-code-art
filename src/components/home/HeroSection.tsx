@@ -3,11 +3,13 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { AnimatedImage } from "@/components/animations/AnimatedImage";
+import { FloatingElements } from "@/components/animations/FloatingElements";
 import heroAbstract from "@/assets/hero-abstract.jpg";
 
 export function HeroSection() {
   return (
-    <section className="section">
+    <section className="section relative">
+      <FloatingElements variant="dense" />
       <div className="container-wide">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-xl">
