@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { AnimatedImage } from "@/components/animations/AnimatedImage";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
+import { FloatingElements } from "@/components/animations/FloatingElements";
 import teamCollab from "@/assets/team-collab.jpg";
 
 const beliefs = [
