@@ -17,7 +17,7 @@ export function Footer() {
           {/* Logo & Tagline */}
           <div className="space-y-2">
             <Link to="/" className="text-xl font-bold tracking-tight text-heading">
-              Apex<span className="text-primary">.</span>
+              AtomIQ<span className="text-primary">.</span>
             </Link>
             <p className="text-sm text-text-muted max-w-xs">
               Engineering-led software that scales with your business.
