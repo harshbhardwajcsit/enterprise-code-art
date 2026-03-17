@@ -4,7 +4,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { AnimatedImage } from "@/components/animations/AnimatedImage";
 import { FloatingElements } from "@/components/animations/FloatingElements";
+import { MagneticButton } from "@/components/animations/MagneticButton";
 import heroAbstract from "@/assets/hero-abstract.jpg";
+
+const spring = { type: "spring" as const, stiffness: 300, damping: 30 };
 
 export function HeroSection() {
   return (
@@ -15,9 +18,9 @@ export function HeroSection() {
           <div className="max-w-xl">
             <motion.h1 
               className="text-balance"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
+              transition={{ ...spring, delay: 0.1 }}
             >
               We engineer for{" "}
               <motion.span 
@@ -41,27 +44,31 @@ export function HeroSection() {
             </motion.h1>
             <motion.p 
               className="mt-6 text-body-lg text-body max-w-2xl"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
+              transition={{ ...spring, delay: 0.15 }}
             >
               From SMEs to fast-growing startups, teams trust us to deliver speed and quality when both are non-negotiable. Built right, software scales with your business.
             </motion.p>
             <motion.div 
               className="mt-10 flex flex-wrap gap-4"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
+              transition={{ ...spring, delay: 0.2 }}
             >
-              <Button asChild size="lg" variant="hero">
-                <Link to="/contact">Book a call</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link to="/services" className="group">
-                  See our capabilities
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
+              <MagneticButton>
+                <Button asChild size="lg" variant="hero">
+                  <Link to="/contact">Book a call</Link>
+                </Button>
+              </MagneticButton>
+              <MagneticButton>
+                <Button asChild size="lg" variant="outline">
+                  <Link to="/services" className="group">
+                    See our capabilities
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </Button>
+              </MagneticButton>
             </motion.div>
           </div>
           <div className="hidden lg:block">

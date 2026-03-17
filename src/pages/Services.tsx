@@ -4,7 +4,10 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { FloatingElements } from "@/components/animations/FloatingElements";
+import { MagneticButton } from "@/components/animations/MagneticButton";
 import { Building2, Globe, Zap, Brain, Code2 } from "lucide-react";
+
+const spring = { type: "spring" as const, stiffness: 300, damping: 30 };
 
 const services = [
   {
@@ -53,9 +56,9 @@ export default function Services() {
         <div className="container-wide relative z-10">
           <motion.div 
             className="max-w-3xl"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ ...spring, delay: 0.1 }}
           >
             <h1 className="mb-6">Capabilities</h1>
             <p className="text-body-lg text-body">
@@ -90,13 +93,13 @@ export default function Services() {
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  transition={{ ...spring, delay: index * 0.05 }}
                 >
                   <div className="flex items-start gap-6 mb-6">
                     <motion.div 
                       className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0"
                       whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ duration: 0.2 }}
+                      transition={spring}
                     >
                       <Icon className="w-7 h-7 text-primary" />
                     </motion.div>
@@ -109,7 +112,7 @@ export default function Services() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.3 }}
+                    transition={{ delay: 0.2 }}
                   >
                     <div>
                       <p className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-2">
@@ -152,14 +155,11 @@ export default function Services() {
               <p className="text-body-lg text-body mb-10">
                 We help you simplify it.
               </p>
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
+              <MagneticButton className="inline-block">
                 <Button asChild size="lg" variant="hero">
                   <Link to="/contact">Talk to us</Link>
                 </Button>
-              </motion.div>
+              </MagneticButton>
             </div>
           </div>
         </FadeIn>

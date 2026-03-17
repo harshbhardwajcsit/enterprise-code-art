@@ -17,11 +17,16 @@ export function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b" style={{
+      background: "hsl(var(--glass-bg))",
+      backdropFilter: "blur(20px)",
+      WebkitBackdropFilter: "blur(20px)",
+      borderColor: "hsl(var(--glass-border))",
+    }}>
       <nav className="container-wide flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold tracking-tight text-heading">
+          <span className="text-xl font-bold tracking-tight text-heading font-display">
             AtomIQ<span className="text-primary">.</span>
           </span>
         </Link>
@@ -65,7 +70,12 @@ export function Header() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-background border-b border-border">
+        <div className="md:hidden border-b" style={{
+          background: "hsl(var(--glass-bg))",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          borderColor: "hsl(var(--glass-border))",
+        }}>
           <div className="container-wide py-4 space-y-4">
             {navigation.map((item) => (
               <Link

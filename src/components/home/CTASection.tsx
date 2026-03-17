@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { FloatingElements } from "@/components/animations/FloatingElements";
+import { MagneticButton } from "@/components/animations/MagneticButton";
 
 export function CTASection() {
   return (
@@ -15,14 +15,11 @@ export function CTASection() {
             <p className="text-body-lg text-body mb-10">
               If you care about speed, quality, and long-term impact — we should talk.
             </p>
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
+            <MagneticButton className="inline-block">
               <Button asChild size="lg" variant="hero">
                 <Link to="/contact">Book a strategy call</Link>
               </Button>
-            </motion.div>
+            </MagneticButton>
           </div>
         </FadeIn>
       </div>
