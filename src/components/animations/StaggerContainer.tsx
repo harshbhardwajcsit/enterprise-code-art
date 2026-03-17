@@ -10,7 +10,7 @@ interface StaggerContainerProps {
 export function StaggerContainer({ 
   children, 
   className = "",
-  staggerDelay = 0.1 
+  staggerDelay = 0.05 
 }: StaggerContainerProps) {
   return (
     <motion.div
@@ -43,13 +43,14 @@ export function StaggerItem({
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 30 },
+        hidden: { opacity: 0, y: 40 },
         visible: { 
           opacity: 1, 
           y: 0,
           transition: {
-            duration: 0.5,
-            ease: [0.25, 0.4, 0.25, 1]
+            type: "spring",
+            stiffness: 300,
+            damping: 30,
           }
         },
       }}

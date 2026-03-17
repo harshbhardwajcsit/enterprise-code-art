@@ -4,15 +4,19 @@ import { ReactNode } from "react";
 interface FadeInProps {
   children: ReactNode;
   delay?: number;
-  duration?: number;
   direction?: "up" | "down" | "left" | "right";
   className?: string;
 }
 
+const springTransition = {
+  type: "spring" as const,
+  stiffness: 300,
+  damping: 30,
+};
+
 export function FadeIn({ 
   children, 
   delay = 0, 
-  duration = 0.5,
   direction = "up",
   className = "" 
 }: FadeInProps) {
@@ -36,9 +40,9 @@ export function FadeIn({
       }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ 
-        duration, 
+        ...springTransition,
         delay,
-        ease: [0.25, 0.4, 0.25, 1]
+        opacity: { duration: 0.4, delay }
       }}
       className={className}
     >

@@ -19,9 +19,11 @@ export function AnimatedImage({
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ 
-        duration: 0.7, 
+        type: "spring",
+        stiffness: 300,
+        damping: 30,
         delay,
-        ease: [0.25, 0.4, 0.25, 1]
+        opacity: { duration: 0.5, delay }
       }}
       className="overflow-hidden rounded-2xl"
     >
@@ -30,7 +32,7 @@ export function AnimatedImage({
         alt={alt} 
         className={`w-full h-auto ${className}`}
         whileHover={{ scale: 1.03 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
       />
     </motion.div>
   );
