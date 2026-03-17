@@ -7,6 +7,14 @@ import { AnimatedImage } from "@/components/animations/AnimatedImage";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { FloatingElements } from "@/components/animations/FloatingElements";
 import teamCollab from "@/assets/team-collab.jpg";
+import member1 from "@/assets/team/member-1.jpg";
+import member2 from "@/assets/team/member-2.jpg";
+import member3 from "@/assets/team/member-3.jpg";
+import member4 from "@/assets/team/member-4.jpg";
+import member5 from "@/assets/team/member-5.jpg";
+import member6 from "@/assets/team/member-6.jpg";
+import member7 from "@/assets/team/member-7.jpg";
+import member8 from "@/assets/team/member-8.jpg";
 
 const beliefs = [
   "Strong foundations beat quick hacks",
@@ -32,6 +40,17 @@ const values = [
     title: "Long-Term Relationships",
     description: "We optimize for trust over time, not short-term revenue. Our best clients become long-term partners.",
   },
+];
+
+const teamMembers = [
+  { name: "Arjun Mehta", role: "CEO & Founder", experience: "12+ years in enterprise software & scaling startups", photo: member1 },
+  { name: "Sara Moreno", role: "VP of Product", experience: "10 years leading product teams at Fortune 500 companies", photo: member2 },
+  { name: "David Kowalski", role: "CTO", experience: "15 years in cloud architecture & distributed systems", photo: member3 },
+  { name: "Nadia Osei", role: "Head of Design", experience: "8 years crafting award-winning digital experiences", photo: member4 },
+  { name: "James Carter", role: "Lead Engineer", experience: "10 years in full-stack development & DevOps", photo: member5 },
+  { name: "Mei Lin", role: "Data Scientist", experience: "7 years in ML, AI solutions & data engineering", photo: member6 },
+  { name: "Lucas Bernardi", role: "Solutions Architect", experience: "9 years designing scalable system architectures", photo: member7 },
+  { name: "Elena Vasquez", role: "Business Development", experience: "11 years in strategic partnerships & growth", photo: member8 },
 ];
 
 export default function About() {
@@ -138,6 +157,42 @@ export default function About() {
                 >
                   <h4 className="mb-4">{value.title}</h4>
                   <p className="text-body">{value.description}</p>
+                </motion.div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="section relative">
+        <FloatingElements variant="section" />
+        <div className="container-wide relative z-10">
+          <FadeIn>
+            <h2 className="mb-16 text-center">
+              Meet our <span className="text-highlight">brilliant</span> Team
+            </h2>
+          </FadeIn>
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8" staggerDelay={0.1}>
+            {teamMembers.map((member, index) => (
+              <StaggerItem key={index}>
+                <motion.div
+                  className="text-center group"
+                  whileHover={{ y: -6 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="relative mb-4 overflow-hidden rounded-2xl border border-border">
+                    <motion.img
+                      src={member.photo}
+                      alt={member.name}
+                      className="w-full aspect-square object-cover"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.4 }}
+                    />
+                  </div>
+                  <h4 className="text-lg font-semibold text-heading">{member.name}</h4>
+                  <p className="text-primary font-medium text-sm mb-1">{member.role}</p>
+                  <p className="text-body text-sm">{member.experience}</p>
                 </motion.div>
               </StaggerItem>
             ))}
