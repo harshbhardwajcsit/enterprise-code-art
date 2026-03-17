@@ -164,6 +164,42 @@ export default function About() {
         </div>
       </section>
 
+      {/* Team Section */}
+      <section className="section relative">
+        <FloatingElements variant="section" />
+        <div className="container-wide relative z-10">
+          <FadeIn>
+            <h2 className="mb-16 text-center">
+              Meet our <span className="text-highlight">brilliant</span> Team
+            </h2>
+          </FadeIn>
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8" staggerDelay={0.1}>
+            {teamMembers.map((member, index) => (
+              <StaggerItem key={index}>
+                <motion.div
+                  className="text-center group"
+                  whileHover={{ y: -6 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="relative mb-4 overflow-hidden rounded-2xl border border-border">
+                    <motion.img
+                      src={member.photo}
+                      alt={member.name}
+                      className="w-full aspect-square object-cover"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.4 }}
+                    />
+                  </div>
+                  <h4 className="text-lg font-semibold text-heading">{member.name}</h4>
+                  <p className="text-primary font-medium text-sm mb-1">{member.role}</p>
+                  <p className="text-body text-sm">{member.experience}</p>
+                </motion.div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section relative">
         <FloatingElements variant="cta" />
