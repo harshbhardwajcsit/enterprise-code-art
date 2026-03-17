@@ -6,8 +6,13 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { AnimatedImage } from "@/components/animations/AnimatedImage";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { FloatingElements } from "@/components/animations/FloatingElements";
+import { MagneticButton } from "@/components/animations/MagneticButton";
+import { BorderBeam } from "@/components/animations/BorderBeam";
 import aiAbstract from "@/assets/ai-abstract.jpg";
 import { TrendingUp, BarChart3, Workflow, Sparkles } from "lucide-react";
+import { useState } from "react";
+
+const spring = { type: "spring" as const, stiffness: 300, damping: 30 };
 
 const aiUseCases = [
   {
@@ -37,6 +42,8 @@ const aiUseCases = [
 ];
 
 export default function AISolutions() {
+  const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
+
   return (
     <Layout>
       {/* Hero */}
@@ -46,18 +53,18 @@ export default function AISolutions() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div 
               className="max-w-xl"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ ...spring, delay: 0.1 }}
             >
               <h1 className="mb-6">
                 AI that makes <span className="text-highlight">business sense</span>
               </h1>
               <motion.p 
                 className="text-body-lg text-body"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ ...spring, delay: 0.15 }}
               >
                 We don't add AI for the sake of it. We use it where it creates measurable value.
               </motion.p>
@@ -89,20 +96,24 @@ export default function AISolutions() {
       {/* AI Use Cases */}
       <section className="section">
         <div className="container-wide">
-          <StaggerContainer className="grid md:grid-cols-2 gap-8" staggerDelay={0.15}>
+          <StaggerContainer className="grid md:grid-cols-2 gap-8" staggerDelay={0.05}>
             {aiUseCases.map((useCase, index) => {
               const Icon = useCase.icon;
               return (
                 <StaggerItem key={index}>
                   <motion.div 
-                    className="impact-card group h-full"
-                    whileHover={{ y: -4 }}
-                    transition={{ duration: 0.2 }}
+                    className="impact-card group h-full relative"
+                    whileHover={{ y: -6 }}
+                    transition={spring}
+                    onHoverStart={() => setFocusedIndex(index)}
+                    onHoverEnd={() => setFocusedIndex(null)}
                   >
+                    {focusedIndex === index && <BorderBeam size={200} duration={6} />}
                     <div className="flex items-center gap-3 mb-4">
                       <motion.div 
                         className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors"
                         whileHover={{ rotate: 5, scale: 1.05 }}
+                        transition={spring}
                       >
                         <Icon className="w-6 h-6 text-primary" />
                       </motion.div>
@@ -117,7 +128,7 @@ export default function AISolutions() {
                           initial={{ opacity: 0 }}
                           whileInView={{ opacity: 1 }}
                           viewport={{ once: true }}
-                          transition={{ delay: 0.4 + i * 0.1 }}
+                          transition={{ delay: 0.3 + i * 0.05 }}
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
                           <span className="text-sm text-text-muted">{example}</span>
@@ -139,10 +150,10 @@ export default function AISolutions() {
           <FadeIn>
             <div className="max-w-3xl mx-auto text-center">
               <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
+                initial={{ scale: 0.95, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+                transition={spring}
               >
                 <h2 className="mb-8">Our AI Philosophy</h2>
                 <p className="text-lg text-body leading-relaxed">
@@ -164,14 +175,11 @@ export default function AISolutions() {
               <p className="text-body-lg text-body mb-10">
                 Let's explore what's realistic and valuable for your specific situation.
               </p>
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
+              <MagneticButton className="inline-block">
                 <Button asChild size="lg" variant="hero">
                   <Link to="/contact">Start a conversation</Link>
                 </Button>
-              </motion.div>
+              </MagneticButton>
             </div>
           </div>
         </FadeIn>

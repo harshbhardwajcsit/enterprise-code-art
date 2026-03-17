@@ -6,6 +6,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { AnimatedImage } from "@/components/animations/AnimatedImage";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { FloatingElements } from "@/components/animations/FloatingElements";
+import { MagneticButton } from "@/components/animations/MagneticButton";
 import teamCollab from "@/assets/team-collab.jpg";
 import member1 from "@/assets/team/member-1.jpg";
 import member2 from "@/assets/team/member-2.jpg";
@@ -15,6 +16,8 @@ import member5 from "@/assets/team/member-5.jpg";
 import member6 from "@/assets/team/member-6.jpg";
 import member7 from "@/assets/team/member-7.jpg";
 import member8 from "@/assets/team/member-8.jpg";
+
+const spring = { type: "spring" as const, stiffness: 300, damping: 30 };
 
 const beliefs = [
   "Strong foundations beat quick hacks",
@@ -63,9 +66,9 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div 
               className="max-w-xl"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ ...spring, delay: 0.1 }}
             >
               <h1 className="mb-6">
                 Built by engineers who care about doing things{" "}
@@ -114,22 +117,23 @@ export default function About() {
                 </p>
               </div>
             </FadeIn>
-            <FadeIn delay={0.2}>
+            <FadeIn delay={0.1}>
               <h2 className="mb-8">What we believe</h2>
               <ul className="space-y-4">
                 {beliefs.map((belief, index) => (
                   <motion.li 
                     key={index} 
-                    className="flex items-start gap-4 p-4 border border-border rounded-lg group"
+                    className="flex items-start gap-4 p-4 glass-card group"
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.3 + index * 0.1 }}
+                    transition={{ ...spring, delay: 0.2 + index * 0.05 }}
                     whileHover={{ x: 4, borderColor: "hsl(var(--primary))" }}
                   >
                     <motion.span 
                       className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"
                       whileHover={{ scale: 1.5 }}
+                      transition={spring}
                     />
                     <span className="text-lg text-heading font-medium">{belief}</span>
                   </motion.li>
@@ -147,13 +151,13 @@ export default function About() {
           <FadeIn>
             <h2 className="mb-16 text-center">Our values</h2>
           </FadeIn>
-          <StaggerContainer className="grid md:grid-cols-2 gap-8" staggerDelay={0.15}>
+          <StaggerContainer className="grid md:grid-cols-2 gap-8" staggerDelay={0.05}>
             {values.map((value, index) => (
               <StaggerItem key={index}>
                 <motion.div 
-                  className="p-8 bg-background border border-border rounded-lg h-full"
+                  className="p-8 glass-card h-full"
                   whileHover={{ y: -4, borderColor: "hsl(var(--primary) / 0.3)" }}
-                  transition={{ duration: 0.2 }}
+                  transition={spring}
                 >
                   <h4 className="mb-4">{value.title}</h4>
                   <p className="text-body">{value.description}</p>
@@ -173,21 +177,21 @@ export default function About() {
               Meet our <span className="text-highlight">brilliant</span> Team
             </h2>
           </FadeIn>
-          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8" staggerDelay={0.1}>
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8" staggerDelay={0.05}>
             {teamMembers.map((member, index) => (
               <StaggerItem key={index}>
                 <motion.div
                   className="text-center group"
                   whileHover={{ y: -6 }}
-                  transition={{ duration: 0.3 }}
+                  transition={spring}
                 >
-                  <div className="relative mb-4 overflow-hidden rounded-2xl border border-border">
+                  <div className="relative mb-4 overflow-hidden rounded-2xl glass-card !p-0">
                     <motion.img
                       src={member.photo}
                       alt={member.name}
                       className="w-full aspect-square object-cover"
                       whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.4 }}
+                      transition={spring}
                     />
                   </div>
                   <h4 className="text-lg font-semibold text-heading">{member.name}</h4>
@@ -210,15 +214,13 @@ export default function About() {
                 If this sounds like your mindset,<br />
                 we'll probably work well together.
               </h2>
-              <motion.div 
-                className="mt-10"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Button asChild size="lg" variant="hero">
-                  <Link to="/contact">Get in touch</Link>
-                </Button>
-              </motion.div>
+              <div className="mt-10">
+                <MagneticButton className="inline-block">
+                  <Button asChild size="lg" variant="hero">
+                    <Link to="/contact">Get in touch</Link>
+                  </Button>
+                </MagneticButton>
+              </div>
             </div>
           </div>
         </FadeIn>
