@@ -7,6 +7,14 @@ import { AnimatedImage } from "@/components/animations/AnimatedImage";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { FloatingElements } from "@/components/animations/FloatingElements";
 import teamCollab from "@/assets/team-collab.jpg";
+import member1 from "@/assets/team/member-1.jpg";
+import member2 from "@/assets/team/member-2.jpg";
+import member3 from "@/assets/team/member-3.jpg";
+import member4 from "@/assets/team/member-4.jpg";
+import member5 from "@/assets/team/member-5.jpg";
+import member6 from "@/assets/team/member-6.jpg";
+import member7 from "@/assets/team/member-7.jpg";
+import member8 from "@/assets/team/member-8.jpg";
 
 const beliefs = [
   "Strong foundations beat quick hacks",
