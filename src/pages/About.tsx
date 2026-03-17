@@ -42,6 +42,17 @@ const values = [
   },
 ];
 
+const teamMembers = [
+  { name: "Arjun Mehta", role: "CEO & Founder", experience: "12+ years in enterprise software & scaling startups", photo: member1 },
+  { name: "Sara Moreno", role: "VP of Product", experience: "10 years leading product teams at Fortune 500 companies", photo: member2 },
+  { name: "David Kowalski", role: "CTO", experience: "15 years in cloud architecture & distributed systems", photo: member3 },
+  { name: "Nadia Osei", role: "Head of Design", experience: "8 years crafting award-winning digital experiences", photo: member4 },
+  { name: "James Carter", role: "Lead Engineer", experience: "10 years in full-stack development & DevOps", photo: member5 },
+  { name: "Mei Lin", role: "Data Scientist", experience: "7 years in ML, AI solutions & data engineering", photo: member6 },
+  { name: "Lucas Bernardi", role: "Solutions Architect", experience: "9 years designing scalable system architectures", photo: member7 },
+  { name: "Elena Vasquez", role: "Business Development", experience: "11 years in strategic partnerships & growth", photo: member8 },
+];
+
 export default function About() {
   return (
     <Layout>
