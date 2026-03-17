@@ -22,7 +22,7 @@ export function Header() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <span className="text-xl font-bold tracking-tight text-heading">
-            Apex<span className="text-primary">.</span>
+            AtomIQ<span className="text-primary">.</span>
           </span>
         </Link>
 

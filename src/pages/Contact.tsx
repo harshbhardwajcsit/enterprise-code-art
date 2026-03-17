@@ -74,7 +74,7 @@ export default function Contact() {
                     href="mailto:hello@apex.dev" 
                     className="text-lg text-primary hover:underline"
                   >
-                    hello@apex.dev
+                    hello@atomiq.dev
                   </a>
                 </div>
 
