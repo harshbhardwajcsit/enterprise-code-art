@@ -2,6 +2,10 @@ import { motion } from "framer-motion";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { TrendingUp, Users, Shield } from "lucide-react";
+import { BorderBeam } from "@/components/animations/BorderBeam";
+import { useState } from "react";
+
+const spring = { type: "spring" as const, stiffness: 300, damping: 30 };
 
 const impactStories = [
   {
@@ -25,24 +29,29 @@ const impactStories = [
 ];
 
 export function ImpactSection() {
+  const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
+
   return (
     <section className="section">
       <div className="container-wide">
         <FadeIn>
           <p className="section-label mb-12">Impact Stories</p>
         </FadeIn>
-        <StaggerContainer className="grid md:grid-cols-3 gap-6" staggerDelay={0.15}>
+        <StaggerContainer className="grid md:grid-cols-3 gap-6" staggerDelay={0.05}>
           {impactStories.map((story, index) => {
             const Icon = story.icon;
             return (
               <StaggerItem key={index}>
                 <motion.div 
-                  className="impact-card group cursor-default h-full"
-                  whileHover={{ y: -4 }}
-                  transition={{ duration: 0.2 }}
+                  className="impact-card group cursor-default h-full relative"
+                  whileHover={{ y: -6 }}
+                  transition={spring}
+                  onHoverStart={() => setFocusedIndex(index)}
+                  onHoverEnd={() => setFocusedIndex(null)}
                 >
+                  {focusedIndex === index && <BorderBeam size={150} duration={6} />}
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <Icon className="w-5 h-5 text-primary" />
                     </div>
                     <span className="text-sm text-text-muted">{story.context}</span>
@@ -54,6 +63,7 @@ export function ImpactSection() {
                     <motion.span 
                       className="text-sm font-semibold text-primary inline-flex items-center gap-2"
                       whileHover={{ x: 4 }}
+                      transition={spring}
                     >
                       {story.outcome}
                       <TrendingUp className="w-4 h-4" />

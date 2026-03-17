@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { Lightbulb, Target, PenTool, Code2, Rocket } from "lucide-react";
 
+const spring = { type: "spring" as const, stiffness: 300, damping: 30 };
+
 const processSteps = [
   {
     title: "Understand",
@@ -72,23 +74,22 @@ export function ProcessSection() {
                 <motion.div
                   key={index}
                   className="relative text-center"
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ 
-                    duration: 0.5, 
-                    delay: 0.2 + index * 0.15,
-                    ease: [0.25, 0.4, 0.25, 1]
+                    ...spring, 
+                    delay: 0.2 + index * 0.05,
                   }}
                 >
                   {/* Step number with icon */}
                   <motion.div 
-                    className="relative z-10 w-32 h-32 mx-auto mb-6 bg-background border-2 border-border rounded-2xl flex flex-col items-center justify-center shadow-sm"
+                    className="relative z-10 w-32 h-32 mx-auto mb-6 glass-card flex flex-col items-center justify-center"
                     whileHover={{ 
                       scale: 1.05, 
                       borderColor: "hsl(var(--primary))",
-                      transition: { duration: 0.2 }
                     }}
+                    transition={spring}
                   >
                     <span className="text-xs font-bold text-primary mb-1">0{index + 1}</span>
                     <Icon className="w-8 h-8 text-heading" strokeWidth={1.5} />
@@ -115,10 +116,10 @@ export function ProcessSection() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ ...spring, delay: index * 0.05 }}
               >
                 <div className="flex flex-col items-center">
-                  <div className="w-14 h-14 bg-background border-2 border-primary/20 rounded-xl flex items-center justify-center">
+                  <div className="w-14 h-14 glass-card flex items-center justify-center !rounded-xl">
                     <Icon className="w-6 h-6 text-primary" strokeWidth={1.5} />
                   </div>
                   {index < processSteps.length - 1 && (

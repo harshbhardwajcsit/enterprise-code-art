@@ -4,6 +4,8 @@ import { AnimatedImage } from "@/components/animations/AnimatedImage";
 import { FloatingElements } from "@/components/animations/FloatingElements";
 import workspaceImage from "@/assets/workspace.jpg";
 
+const spring = { type: "spring" as const, stiffness: 300, damping: 30 };
+
 const principles = [
   "Business-first architecture",
   "Clean, maintainable codebases",
@@ -30,12 +32,13 @@ export function PrinciplesSection() {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.1 + index * 0.1, duration: 0.4 }}
+                  transition={{ ...spring, delay: 0.1 + index * 0.05 }}
                   whileHover={{ x: 4 }}
                 >
                   <motion.span 
                     className="w-2 h-2 rounded-full bg-primary mt-2.5 flex-shrink-0"
                     whileHover={{ scale: 1.5 }}
+                    transition={spring}
                   />
                   <span className="text-lg text-body group-hover:text-heading transition-colors">
                     {principle}
