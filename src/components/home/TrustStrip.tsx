@@ -1,18 +1,24 @@
 import { motion } from "framer-motion";
 
 const trustLogos = [
-  "TechCorp",
-  "ScaleUp",
-  "InnovateCo",
-  "GrowthLabs",
-  "Velocity",
+  "ValetCopter",
+  "EasierChef",
+  "Rattle",
+  "PTC",
+  "Vestas",
+  "FoodSwap",
+  "JS Constructions",
+  "Jugnoo Mobility",
 ];
 
 export function TrustStrip() {
+  // Duplicate for seamless loop
+  const doubled = [...trustLogos, ...trustLogos];
+
   return (
     <section className="section-sm border-y border-border bg-secondary/30 overflow-hidden">
       <div className="container-wide">
-        <motion.p 
+        <motion.p
           className="text-sm font-medium text-body text-center mb-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -21,21 +27,29 @@ export function TrustStrip() {
         >
           Trusted by founders, operators, and executives who care about long-term software quality
         </motion.p>
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-          {trustLogos.map((logo, index) => (
-            <motion.span
-              key={logo}
-              className="text-lg font-semibold text-text-muted cursor-default"
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 0.6, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.4 }}
-              whileHover={{ opacity: 1, scale: 1.05 }}
+      </div>
+      <div className="relative w-full overflow-hidden">
+        <motion.div
+          className="flex gap-12 whitespace-nowrap"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 20,
+              ease: "linear",
+            },
+          }}
+        >
+          {doubled.map((logo, index) => (
+            <span
+              key={`${logo}-${index}`}
+              className="text-lg font-semibold text-muted-foreground opacity-60 hover:opacity-100 transition-opacity cursor-default"
             >
               {logo}
-            </motion.span>
+            </span>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
