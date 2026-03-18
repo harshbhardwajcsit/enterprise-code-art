@@ -167,7 +167,7 @@ export default function About() {
               Meet our <span className="text-highlight">brilliant</span> Team
             </h2>
           </FadeIn>
-          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8" staggerDelay={0.05}>
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8" staggerDelay={0.05}>
             {teamMembers.map((member, index) => (
               <StaggerItem key={index}>
                 <motion.div
