@@ -8,14 +8,9 @@ import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerCo
 import { FloatingElements } from "@/components/animations/FloatingElements";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import teamCollab from "@/assets/team-collab.jpg";
-import member1 from "@/assets/team/member-1.jpg";
-import member2 from "@/assets/team/member-2.jpg";
-import member3 from "@/assets/team/member-3.jpg";
-import member4 from "@/assets/team/member-4.jpg";
-import member5 from "@/assets/team/member-5.jpg";
-import member6 from "@/assets/team/member-6.jpg";
-import member7 from "@/assets/team/member-7.jpg";
-import member8 from "@/assets/team/member-8.jpg";
+import aditiSharma from "@/assets/team/aditi-sharma.jpg";
+import akshatSharma from "@/assets/team/akshat-sharma.png";
+import harshBhardwaj from "@/assets/team/harsh-bhardwaj.png";
 
 const spring = { type: "spring" as const, stiffness: 300, damping: 30 };
 
@@ -46,14 +41,9 @@ const values = [
 ];
 
 const teamMembers = [
-  { name: "Arjun Mehta", role: "CEO & Founder", experience: "12+ years in enterprise software & scaling startups", photo: member1 },
-  { name: "Sara Moreno", role: "VP of Product", experience: "10 years leading product teams at Fortune 500 companies", photo: member2 },
-  { name: "David Kowalski", role: "CTO", experience: "15 years in cloud architecture & distributed systems", photo: member3 },
-  { name: "Nadia Osei", role: "Head of Design", experience: "8 years crafting award-winning digital experiences", photo: member4 },
-  { name: "James Carter", role: "Lead Engineer", experience: "10 years in full-stack development & DevOps", photo: member5 },
-  { name: "Mei Lin", role: "Data Scientist", experience: "7 years in ML, AI solutions & data engineering", photo: member6 },
-  { name: "Lucas Bernardi", role: "Solutions Architect", experience: "9 years designing scalable system architectures", photo: member7 },
-  { name: "Elena Vasquez", role: "Business Development", experience: "11 years in strategic partnerships & growth", photo: member8 },
+  { name: "Aditi Sharma", role: "Director, Sales & Marketing", experience: "8+ years of experience", photo: aditiSharma },
+  { name: "Akshat Sharma", role: "Director, Product Design & Strategy", experience: "", photo: akshatSharma },
+  { name: "Harsh Bhardwaj", role: "Partner & Consultant", experience: "12+ years of experience in shaping technology worth a 100+ billion dollar market", photo: harshBhardwaj },
 ];
 
 export default function About() {
