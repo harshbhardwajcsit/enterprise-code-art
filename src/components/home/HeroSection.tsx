@@ -44,7 +44,7 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ ...spring, delay: 0.15 }}
         >
-          From SMEs to fast-growing startups, teams trust us to deliver speed
+          From SMEs to Retail Businesses to D2C brands, teams trust us to deliver speed
           and quality when both are non-negotiable. Built right, software scales
           with your business.
         </motion.p>
