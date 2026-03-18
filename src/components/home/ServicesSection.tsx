@@ -13,8 +13,8 @@ const services = [
     description: "Internal tools, dashboards, workflows, and automation built around how your business actually operates.",
   },
   {
-    title: "Websites for SMEs",
-    description: "High-performance, conversion-focused websites designed to scale as your business grows.",
+    title: "Web Presence SMEs",
+    description: "High-performance, conversion-focused websites and tools designed to scale as your business grows.",
   },
   {
     title: "Productivity Tools",
