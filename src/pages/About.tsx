@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { AnimatedImage } from "@/components/animations/AnimatedImage";
+
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { FloatingElements } from "@/components/animations/FloatingElements";
 import { MagneticButton } from "@/components/animations/MagneticButton";
-import teamCollab from "@/assets/team-collab.jpg";
+
 import aditiSharma from "@/assets/team/aditi-sharma.jpg";
 import akshatSharma from "@/assets/team/akshat-sharma.png";
 import harshBhardwaj from "@/assets/team/harsh-bhardwaj.png";
@@ -53,7 +53,7 @@ export default function About() {
       <section className="section relative">
         <FloatingElements variant="hero" />
         <div className="container-wide relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-2xl">
             <motion.div 
               className="max-w-xl"
               initial={{ opacity: 0, y: 40 }}
@@ -61,18 +61,13 @@ export default function About() {
               transition={{ ...spring, delay: 0.1 }}
             >
               <h1 className="mb-6">
-                Built by engineers who care about doing things{" "}
+                Built by experts who care about doing things{" "}
                 <span className="text-highlight">right</span>
               </h1>
+              <p className="text-body-lg text-body">
+                Based in India. Working with customers globally.
+              </p>
             </motion.div>
-            <div className="hidden lg:block">
-              <AnimatedImage 
-                src={teamCollab} 
-                alt="Team collaborating in a modern office"
-                delay={0.2}
-                className="shadow-lg"
-              />
-            </div>
           </div>
         </div>
       </section>
