@@ -61,18 +61,13 @@ export default function About() {
               transition={{ ...spring, delay: 0.1 }}
             >
               <h1 className="mb-6">
-                Built by engineers who care about doing things{" "}
+                Built by experts who care about doing things{" "}
                 <span className="text-highlight">right</span>
               </h1>
+              <p className="text-body-lg text-body">
+                Based in India. Working with customers globally.
+              </p>
             </motion.div>
-            <div className="hidden lg:block">
-              <AnimatedImage 
-                src={teamCollab} 
-                alt="Team collaborating in a modern office"
-                delay={0.2}
-                className="shadow-lg"
-              />
-            </div>
           </div>
         </div>
       </section>
