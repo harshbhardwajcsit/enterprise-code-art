@@ -7,7 +7,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { FloatingElements } from "@/components/animations/FloatingElements";
 import { MagneticButton } from "@/components/animations/MagneticButton";
-import teamCollab from "@/assets/team-collab.jpg";
+
 import aditiSharma from "@/assets/team/aditi-sharma.jpg";
 import akshatSharma from "@/assets/team/akshat-sharma.png";
 import harshBhardwaj from "@/assets/team/harsh-bhardwaj.png";
