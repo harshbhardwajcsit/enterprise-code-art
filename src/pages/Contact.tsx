@@ -109,11 +109,6 @@ export default function Contact() {
                     </p>
                   </div>
 
-                  <div className="pt-6 border-t border-border">
-                    <p className="text-sm text-text-muted">
-                      Based in the UK. Working with clients globally.
-                    </p>
-                  </div>
                 </div>
               </div>
             </FadeIn>
