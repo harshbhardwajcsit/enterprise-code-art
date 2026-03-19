@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { AnimatedImage } from "@/components/animations/AnimatedImage";
+
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { FloatingElements } from "@/components/animations/FloatingElements";
 import { MagneticButton } from "@/components/animations/MagneticButton";
