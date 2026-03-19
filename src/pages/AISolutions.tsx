@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { AnimatedImage } from "@/components/animations/AnimatedImage";
+
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { FloatingElements } from "@/components/animations/FloatingElements";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import { BorderBeam } from "@/components/animations/BorderBeam";
-import aiAbstract from "@/assets/ai-abstract.jpg";
+
 import { TrendingUp, BarChart3, Workflow, Sparkles } from "lucide-react";
 import { useState } from "react";
 
@@ -50,9 +50,8 @@ export default function AISolutions() {
       <section className="section relative">
         <FloatingElements variant="hero" />
         <div className="container-wide relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-2xl">
             <motion.div 
-              className="max-w-xl"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ ...spring, delay: 0.1 }}
@@ -69,14 +68,6 @@ export default function AISolutions() {
                 We don't add AI for the sake of it. We use it where it creates measurable value.
               </motion.p>
             </motion.div>
-            <div className="hidden lg:block">
-              <AnimatedImage 
-                src={aiAbstract} 
-                alt="Abstract flowing lines representing AI and data"
-                delay={0.2}
-                className="shadow-lg"
-              />
-            </div>
           </div>
         </div>
       </section>
