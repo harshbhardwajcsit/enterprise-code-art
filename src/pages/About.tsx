@@ -41,9 +41,9 @@ const values = [
 ];
 
 const teamMembers = [
-  { name: "Aditi Sharma", role: "Director, Sales & Marketing", experience: "8+ years of experience", photo: aditiSharma },
-  { name: "Akshat Sharma", role: "Director, Product Design & Strategy", experience: "", photo: akshatSharma },
-  { name: "Harsh Bhardwaj", role: "Partner & Consultant", experience: "12+ years of experience in shaping technology worth a 100+ billion dollar market", photo: harshBhardwaj },
+  { name: "Aditi Sharma", role: "Director, Sales & Marketing", experience: "Experience in leading high-paced sales and marketing teams at PepsiCo, Airtel, and Oppo.", photo: aditiSharma },
+  { name: "Akshat Sharma", role: "Director, Product Design & Strategy", experience: "Dynamic experience in management & building momentum for Infrastructures and Institutes.", photo: akshatSharma },
+  { name: "Harsh Bhardwaj", role: "Partner & Consultant", experience: "12+ years of experience in shaping technology worth a 100+ billion dollar market.", photo: harshBhardwaj },
 ];
 
 export default function About() {
