@@ -8,7 +8,7 @@ import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerCo
 import { FloatingElements } from "@/components/animations/FloatingElements";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import { BorderBeam } from "@/components/animations/BorderBeam";
-import aiAbstract from "@/assets/ai-abstract.jpg";
+
 import { TrendingUp, BarChart3, Workflow, Sparkles } from "lucide-react";
 import { useState } from "react";
 
