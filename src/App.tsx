@@ -8,6 +8,7 @@ import Services from "./pages/Services";
 import AISolutions from "./pages/AISolutions";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import ComingSoon from "./pages/ComingSoon";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
