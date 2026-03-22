@@ -16,11 +16,11 @@ const navigation: NavItem[] = [
     name: "Products",
     href: "/products",
     dropdown: [
-      { name: "SMEs", href: "/products/smes" },
-      { name: "Real Estate Developers", href: "/products/real-estate" },
-      { name: "Retail", href: "/products/retail" },
-      { name: "Whole Sellers", href: "/products/whole-sellers" },
-      { name: "D2C", href: "/products/d2c" },
+      { name: "SMEs", href: "/coming-soon" },
+      { name: "Real Estate Developers", href: "/coming-soon" },
+      { name: "Retail", href: "/coming-soon" },
+      { name: "Whole Sellers", href: "/coming-soon" },
+      { name: "D2C", href: "/coming-soon" },
     ],
   },
   {
@@ -38,8 +38,8 @@ const navigation: NavItem[] = [
     name: "AI Solutions",
     href: "/ai-solutions",
     dropdown: [
-      { name: "AI for Sales", href: "/ai-solutions#ai-for-sales" },
-      { name: "AI for Marketing", href: "/ai-solutions#ai-for-marketing" },
+      { name: "AI for Sales", href: "/coming-soon" },
+      { name: "AI for Marketing", href: "/coming-soon" },
     ],
   },
   { name: "About", href: "/about" },
