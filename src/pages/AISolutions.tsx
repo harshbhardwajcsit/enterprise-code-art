@@ -83,7 +83,8 @@ export default function AISolutions() {
               return (
                 <StaggerItem key={index}>
                   <motion.div 
-                    className="impact-card group h-full relative"
+                    id={useCase.id}
+                    className="impact-card group h-full relative scroll-mt-24"
                     whileHover={{ y: -6 }}
                     transition={spring}
                     onHoverStart={() => setFocusedIndex(index)}
