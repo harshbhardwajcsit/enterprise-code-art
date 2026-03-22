@@ -94,7 +94,8 @@ export default function Services() {
               return (
                 <motion.div 
                   key={index} 
-                  className="max-w-4xl"
+                  id={service.id}
+                  className="max-w-4xl scroll-mt-24"
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
