@@ -9,7 +9,7 @@ import { FloatingElements } from "@/components/animations/FloatingElements";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import { BorderBeam } from "@/components/animations/BorderBeam";
 
-import { TrendingUp, BarChart3, Workflow, Sparkles } from "lucide-react";
+import { TrendingUp, BarChart3 } from "lucide-react";
 import { useState } from "react";
 
 const spring = { type: "spring" as const, stiffness: 300, damping: 30 };
