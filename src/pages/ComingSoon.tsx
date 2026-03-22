@@ -5,7 +5,7 @@ import { Spotlight } from "@/components/ui/spotlight";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Mail, ArrowRight } from "lucide-react";
-import Layout from "@/components/layout/Layout";
+import { Layout } from "@/components/layout/Layout";
 import { useToast } from "@/hooks/use-toast";
 
 export default function ComingSoon() {
