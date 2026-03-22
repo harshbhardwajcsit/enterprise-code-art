@@ -1,9 +1,18 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const productOptions = [
+  { name: "SMEs", href: "/products/smes" },
+  { name: "Real Estate Developers", href: "/products/real-estate" },
+  { name: "Retail", href: "/products/retail" },
+  { name: "Whole Sellers", href: "/products/whole-sellers" },
+  { name: "D2C", href: "/products/d2c" },
+];
+
 const navigation = [
+  { name: "Products", href: "/products", hasDropdown: true },
   { name: "Services", href: "/services" },
   { name: "AI Solutions", href: "/ai-solutions" },
   { name: "About", href: "/about" },
