@@ -120,18 +120,46 @@ export function Header() {
           borderColor: "hsl(var(--glass-border))",
         }}>
           <div className="container-wide py-4 space-y-4">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`block py-2 text-base font-medium transition-colors ${
-                  isActive(item.href) ? "text-primary" : "text-body"
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navigation.map((item) =>
+              item.hasDropdown ? (
+                <div key={item.name}>
+                  <button
+                    className={`flex items-center justify-between w-full py-2 text-base font-medium transition-colors ${
+                      location.pathname.startsWith("/products") ? "text-primary" : "text-body"
+                    }`}
+                    onClick={() => setProductsOpen(!productsOpen)}
+                  >
+                    {item.name}
+                    <ChevronDown className={`h-4 w-4 transition-transform ${productsOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  {productsOpen && (
+                    <div className="pl-4 space-y-1">
+                      {productOptions.map((option) => (
+                        <Link
+                          key={option.name}
+                          to={option.href}
+                          className="block py-2 text-sm text-body hover:text-primary transition-colors"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {option.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`block py-2 text-base font-medium transition-colors ${
+                    isActive(item.href) ? "text-primary" : "text-body"
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              )
+            )}
             <div className="pt-4 border-t border-border">
               <Button asChild className="w-full">
                 <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
