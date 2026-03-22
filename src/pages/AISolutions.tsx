@@ -9,35 +9,25 @@ import { FloatingElements } from "@/components/animations/FloatingElements";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import { BorderBeam } from "@/components/animations/BorderBeam";
 
-import { TrendingUp, BarChart3, Workflow, Sparkles } from "lucide-react";
+import { TrendingUp, BarChart3 } from "lucide-react";
 import { useState } from "react";
 
 const spring = { type: "spring" as const, stiffness: 300, damping: 30 };
 
 const aiUseCases = [
   {
-    title: "AI for Growth & Marketing",
-    description: "Leverage AI to identify opportunities, personalize customer experiences, optimize campaigns, and scale what's working. From lead scoring to content generation — practical applications that drive measurable growth.",
-    examples: ["Intelligent lead qualification", "Personalized recommendations", "Content generation at scale", "Campaign optimization"],
+    id: "ai-for-sales",
+    title: "AI for Sales",
+    description: "Leverage AI to identify opportunities, qualify leads intelligently, and accelerate your sales pipeline. From predictive lead scoring to automated outreach — practical applications that close more deals.",
+    examples: ["Intelligent lead qualification", "Predictive deal scoring", "Automated follow-ups", "Sales pipeline optimization"],
     icon: TrendingUp,
   },
   {
-    title: "AI-Powered Analytics & Insights",
-    description: "Turn raw data into actionable intelligence. AI systems that surface patterns, predict trends, and help you make better decisions faster than traditional analytics.",
-    examples: ["Predictive analytics", "Anomaly detection", "Customer behavior analysis", "Business intelligence automation"],
+    id: "ai-for-marketing",
+    title: "AI for Marketing",
+    description: "AI-powered marketing that personalizes customer experiences, optimizes campaigns, and scales content creation. Drive measurable growth with data-driven strategies.",
+    examples: ["Personalized recommendations", "Content generation at scale", "Campaign optimization", "Customer behavior analysis"],
     icon: BarChart3,
-  },
-  {
-    title: "Workflow Automation with Intelligence",
-    description: "Go beyond simple automation. AI-powered workflows that can understand context, make decisions, and handle edge cases that rule-based systems can't.",
-    examples: ["Document processing & extraction", "Intelligent routing & triage", "Automated quality checks", "Smart notifications & escalations"],
-    icon: Workflow,
-  },
-  {
-    title: "Custom AI-Powered Products",
-    description: "Build AI capabilities directly into your product. From chatbots to recommendation engines — we help you integrate AI in ways that create competitive advantage.",
-    examples: ["Conversational AI assistants", "Search & discovery systems", "Matching & recommendation engines", "Intelligent automation features"],
-    icon: Sparkles,
   },
 ];
 
@@ -93,7 +83,8 @@ export default function AISolutions() {
               return (
                 <StaggerItem key={index}>
                   <motion.div 
-                    className="impact-card group h-full relative"
+                    id={useCase.id}
+                    className="impact-card group h-full relative scroll-mt-24"
                     whileHover={{ y: -6 }}
                     transition={spring}
                     onHoverStart={() => setFocusedIndex(index)}

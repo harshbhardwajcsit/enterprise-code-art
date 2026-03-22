@@ -11,6 +11,7 @@ const spring = { type: "spring" as const, stiffness: 300, damping: 30 };
 
 const services = [
   {
+    id: "business-application-development",
     title: "Business Application Development",
     description: "We build internal tools, dashboards, admin panels, and workflow systems that match how your business actually operates. No one-size-fits-all templates — every system is architected around your specific processes.",
     whenNeeded: "When off-the-shelf tools are slowing you down or creating workarounds across your team.",
@@ -18,6 +19,7 @@ const services = [
     icon: Building2,
   },
   {
+    id: "website-development-for-smes",
     title: "Website Development for SMEs",
     description: "High-performance, conversion-focused websites built for growth. We focus on speed, SEO, and user experience — not flashy features that don't move the needle.",
     whenNeeded: "When your current site isn't generating leads, loading fast, or reflecting the quality of your business.",
@@ -25,6 +27,7 @@ const services = [
     icon: Globe,
   },
   {
+    id: "productivity-workflow-tools",
     title: "Productivity & Workflow Tools",
     description: "Custom software designed to automate repetitive tasks, streamline approvals, and help your team focus on high-value work instead of manual processes.",
     whenNeeded: "When your team spends too much time on spreadsheets, copy-pasting, or chasing updates.",
@@ -32,6 +35,7 @@ const services = [
     icon: Zap,
   },
   {
+    id: "ai-intelligent-systems",
     title: "AI & Intelligent Systems",
     description: "Practical AI applications for growth, marketing, customer support, and decision-making. We integrate AI where it creates measurable value — not where it sounds impressive.",
     whenNeeded: "When you want to leverage AI but need guidance on what's realistic and valuable for your business.",
@@ -39,6 +43,7 @@ const services = [
     icon: Brain,
   },
   {
+    id: "custom-software-engineering",
     title: "Custom Software Engineering",
     description: "End-to-end product development from initial concept through to production-ready systems. We handle architecture, development, testing, deployment, and ongoing support.",
     whenNeeded: "When you have a product idea or complex technical challenge that requires experienced engineering.",
@@ -89,7 +94,8 @@ export default function Services() {
               return (
                 <motion.div 
                   key={index} 
-                  className="max-w-4xl"
+                  id={service.id}
+                  className="max-w-4xl scroll-mt-24"
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
