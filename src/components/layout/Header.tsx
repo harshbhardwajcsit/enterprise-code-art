@@ -1,9 +1,18 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const productOptions = [
+  { name: "SMEs", href: "/products/smes" },
+  { name: "Real Estate Developers", href: "/products/real-estate" },
+  { name: "Retail", href: "/products/retail" },
+  { name: "Whole Sellers", href: "/products/whole-sellers" },
+  { name: "D2C", href: "/products/d2c" },
+];
+
 const navigation = [
+  { name: "Products", href: "/products", hasDropdown: true },
   { name: "Services", href: "/services" },
   { name: "AI Solutions", href: "/ai-solutions" },
   { name: "About", href: "/about" },
@@ -12,6 +21,7 @@ const navigation = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
@@ -33,17 +43,50 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              to={item.href}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                isActive(item.href) ? "text-primary" : "text-body"
-              }`}
-            >
-              {item.name}
-            </Link>
-          ))}
+          {navigation.map((item) =>
+            item.hasDropdown ? (
+              <div
+                key={item.name}
+                className="relative"
+                onMouseEnter={() => setProductsOpen(true)}
+                onMouseLeave={() => setProductsOpen(false)}
+              >
+                <button
+                  className={`text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 ${
+                    location.pathname.startsWith("/products") ? "text-primary" : "text-body"
+                  }`}
+                >
+                  {item.name}
+                  <ChevronDown className={`h-3.5 w-3.5 transition-transform ${productsOpen ? "rotate-180" : ""}`} />
+                </button>
+                {productsOpen && (
+                  <div
+                    className="absolute top-full left-0 mt-2 w-56 rounded-lg border border-border bg-background shadow-lg py-2"
+                  >
+                    {productOptions.map((option) => (
+                      <Link
+                        key={option.name}
+                        to={option.href}
+                        className="block px-4 py-2.5 text-sm text-body hover:text-primary hover:bg-muted transition-colors"
+                      >
+                        {option.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={`text-sm font-medium transition-colors hover:text-primary ${
+                  isActive(item.href) ? "text-primary" : "text-body"
+                }`}
+              >
+                {item.name}
+              </Link>
+            )
+          )}
         </div>
 
         {/* Desktop CTA */}
@@ -77,18 +120,46 @@ export function Header() {
           borderColor: "hsl(var(--glass-border))",
         }}>
           <div className="container-wide py-4 space-y-4">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`block py-2 text-base font-medium transition-colors ${
-                  isActive(item.href) ? "text-primary" : "text-body"
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navigation.map((item) =>
+              item.hasDropdown ? (
+                <div key={item.name}>
+                  <button
+                    className={`flex items-center justify-between w-full py-2 text-base font-medium transition-colors ${
+                      location.pathname.startsWith("/products") ? "text-primary" : "text-body"
+                    }`}
+                    onClick={() => setProductsOpen(!productsOpen)}
+                  >
+                    {item.name}
+                    <ChevronDown className={`h-4 w-4 transition-transform ${productsOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  {productsOpen && (
+                    <div className="pl-4 space-y-1">
+                      {productOptions.map((option) => (
+                        <Link
+                          key={option.name}
+                          to={option.href}
+                          className="block py-2 text-sm text-body hover:text-primary transition-colors"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {option.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`block py-2 text-base font-medium transition-colors ${
+                    isActive(item.href) ? "text-primary" : "text-body"
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              )
+            )}
             <div className="pt-4 border-t border-border">
               <Button asChild className="w-full">
                 <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
