@@ -109,6 +109,7 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.6s ease-out forwards",
         aurora: "aurora 60s linear infinite",
+        spotlight: "spotlight 2s ease 0.2s 1 forwards",
       },
     },
   },
