@@ -229,7 +229,6 @@
     animation: border-beam var(--duration, 8s) linear infinite;
     animation-delay: var(--delay, 0s);
   }
-  }
 
   .loader {
     width: 24px;
