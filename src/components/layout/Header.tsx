@@ -197,8 +197,6 @@ export function Header() {
                               </span>
                             )}
                           </span>
-                        >
-                          {option.name}
                         </Link>
                       ))}
                     </div>
