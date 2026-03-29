@@ -189,6 +189,15 @@ export function Header() {
                           className="block py-2 text-sm text-body hover:text-primary transition-colors"
                           onClick={() => handleLinkClick(option.href)}
                         >
+                          <span className="inline-flex items-center">
+                            {option.name}
+                            {option.comingSoon && (
+                              <span className="bg-green-500/10 text-green-600 text-[10px] px-1.5 py-0.5 rounded-md border border-green-200 ml-2 font-bold inline-flex items-center">
+                                Coming Soon
+                              </span>
+                            )}
+                          </span>
+                        >
                           {option.name}
                         </Link>
                       ))}
