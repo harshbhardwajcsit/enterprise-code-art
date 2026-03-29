@@ -40,7 +40,7 @@ const navigation: NavItem[] = [
     href: "/ai-solutions",
     dropdown: [
       { name: "AI for Sales", href: "/coming-soon" },
-      { name: "AI for Marketing", href: "/coming-soon" },
+      { name: "Vyapaar.ai", href: "/coming-soon", comingSoon: true },
     ],
   },
   { name: "About", href: "/about" },
