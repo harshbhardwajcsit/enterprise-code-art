@@ -4,7 +4,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-type DropdownOption = { name: string; href: string };
+type DropdownOption = { name: string; href: string; comingSoon?: boolean };
 
 type NavItem = {
   name: string;
