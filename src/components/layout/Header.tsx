@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-type DropdownOption = { name: string; href: string };
+type DropdownOption = { name: string; href: string; comingSoon?: boolean };
 
 type NavItem = {
   name: string;
@@ -39,7 +40,7 @@ const navigation: NavItem[] = [
     href: "/ai-solutions",
     dropdown: [
       { name: "AI for Sales", href: "/coming-soon" },
-      { name: "AI for Marketing", href: "/coming-soon" },
+      { name: "Vyapaar.ai", href: "/coming-soon", comingSoon: true },
     ],
   },
   { name: "About", href: "/about" },
@@ -109,7 +110,14 @@ export function Header() {
                         className="block px-4 py-2.5 text-sm text-body hover:text-primary hover:bg-muted transition-colors"
                         onClick={() => handleLinkClick(option.href)}
                       >
-                        {option.name}
+                        <span className="inline-flex items-center">
+                          {option.name}
+                          {option.comingSoon && (
+                            <span className="bg-green-500/10 text-green-600 text-[10px] px-1.5 py-0.5 rounded-md border border-green-200 ml-2 font-bold inline-flex items-center">
+                              Coming Soon
+                            </span>
+                          )}
+                        </span>
                       </Link>
                     ))}
                   </div>
@@ -181,7 +189,14 @@ export function Header() {
                           className="block py-2 text-sm text-body hover:text-primary transition-colors"
                           onClick={() => handleLinkClick(option.href)}
                         >
-                          {option.name}
+                          <span className="inline-flex items-center">
+                            {option.name}
+                            {option.comingSoon && (
+                              <span className="bg-green-500/10 text-green-600 text-[10px] px-1.5 py-0.5 rounded-md border border-green-200 ml-2 font-bold inline-flex items-center">
+                                Coming Soon
+                              </span>
+                            )}
+                          </span>
                         </Link>
                       ))}
                     </div>
